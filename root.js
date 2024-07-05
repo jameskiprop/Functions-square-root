@@ -35,6 +35,7 @@
 // for (let i = 0; i < nums.length; i++) {
 //   console.log(`${nums[i]}: ${Math.sqrt(nums[i])}`);
 // }
+
 // 4. using the reduce method
 // let nums = [4, 9, 16, 25, 36, 49, 64, 81, 100]; //initializing the array
 // //calling the reduce method on the `nums` array & applying a function against an accumulator and each element in the array
@@ -60,16 +61,28 @@ Create a function that takes an array of numbers as an argument, and returns an 
 // squareRoots(nums);
 
 //another one
-function squareRoots(numbers) {
-  return numbers
-    .map((num) => Math.sqrt(num)) // Map each number to its square root
-    .filter((sqrt) => sqrt % 2 === 0); // Filtering the square roots to keep only even numbers
 
-  const numbers = [4, 9, 16, 25, 36, 49, 64, 81, 100];
+// function squareRoots(numbers) {
+//   return numbers
+//     .map((num) => Math.sqrt(num)) // Map each number to its square root
+//     .filter((sqrt) => sqrt % 2 === 0); // Filtering the square roots to keep only even numbers
 
-  console.log(`${numbers}: ${Math.sqrt(numbers)}`);
-}
-squareRoots(numbers);
+//   const nums = [4, 9, 16, 25, 36, 49, 64, 81, 100];
 
-/*Create a function that takes an array of numbers and a number x as arguments, and returns an array of the square roots of those numbers that are greater than x. So for instance if you have an array [4, 9, 16, 25, 36], and x is 3, 
+//   console.log(`${nums}: ${Math.sqrt(nums)}`);
+// }
+// squareRoots(nums);
+
+/*Create a function that takes an array of numbers and a number x as arguments, 
+and returns an array of the square roots of those numbers that are greater than x. 
+So for instance if you have an array [4, 9, 16, 25, 36], and x is 3, 
 then the function should return [4, 5, 6].*/
+
+const numbers = [4, 9, 16, 25, 36, 49, 64, 81, 100];
+const x = 5;
+function findSquareRoots(numbers, x) {
+  return numbers
+    .map((num) => Math.sqrt(num)) //compute the square root of a given number
+    .filter((sqrt) => sqrt > x); // give back the square root of numbers which are greater than x
+}
+console.log(findSquareRoots(numbers, x));
